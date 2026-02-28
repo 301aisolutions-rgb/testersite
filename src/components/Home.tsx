@@ -80,6 +80,9 @@ export default function Home() {
         })
       ]);
 
+      console.log('Response 1:', response1.status, response1.ok);
+      console.log('Response 2:', response2.status, response2.ok);
+
       if (response1.ok && response2.ok) {
         setFormStatus('success');
         setFormData({
@@ -91,10 +94,12 @@ export default function Home() {
         });
         setTimeout(() => setFormStatus('idle'), 5000);
       } else {
+        console.error('Form submission failed - Response 1:', response1.status, 'Response 2:', response2.status);
         setFormStatus('error');
         setTimeout(() => setFormStatus('idle'), 5000);
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       setFormStatus('error');
       setTimeout(() => setFormStatus('idle'), 5000);
     }
