@@ -371,6 +371,12 @@ export default function Home() {
                 className="w-full border-b border-white/20 bg-transparent px-0 py-3 text-white outline-none placeholder:text-white/40 focus:border-white/60"
               />
 
+              {formStatus === 'success' && (
+                <div className="rounded bg-green-500/10 border border-green-500/30 px-4 py-3 text-green-400">
+                  Thank you! Your inquiry has been submitted successfully.
+                </div>
+              )}
+
               <button
                 type="submit"
                 disabled={formStatus === 'submitting'}
