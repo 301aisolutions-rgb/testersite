@@ -372,8 +372,14 @@ export default function Home() {
               />
 
               {formStatus === 'success' && (
-                <div className="rounded bg-green-500/10 border border-green-500/30 px-4 py-3 text-green-400">
+                <div className="rounded bg-green-500/10 border border-green-500/30 px-4 py-3 text-green-400 text-sm">
                   Thank you! Your inquiry has been submitted successfully.
+                </div>
+              )}
+
+              {formStatus === 'error' && (
+                <div className="rounded bg-red-500/10 border border-red-500/30 px-4 py-3 text-red-400 text-sm">
+                  There was an error submitting your inquiry. Please try again.
                 </div>
               )}
 
