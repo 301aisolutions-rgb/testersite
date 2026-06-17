@@ -66,18 +66,19 @@ export default function Home() {
       await Promise.all([
         fetch('https://l301aisolutions.app.n8n.cloud/webhook-test/Newstyle email', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         }),
         fetch('https://l301aisolutions.app.n8n.cloud/form-test/25f511f1-7f2c-455e-a2d0-21568427d04d', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
-        })
+        }),
+        fetch('https://l301aisolutions.app.n8n.cloud/webhook/9f66f43e-069b-410b-ae93-a3b7236e449a', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }),
       ]);
     } catch (error) {
       console.log('Webhook error (ignored):', error);
